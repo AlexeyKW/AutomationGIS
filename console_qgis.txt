@@ -1,0 +1,8 @@
+import glob
+nso_shp = "E:\\AutoGIS\\adm\\nso.shp"
+osm_dir = "E:\\AutoGIS\\osm"
+
+for shp_file in glob.glob(osm_dir+"\\*.shp"):
+   print(shp_file)
+   clip_path = "E:\\AutoGIS\\osm\\clip4\\"+os.path.basename(shp_file)
+   processing.run("native:clip", {'INPUT':shp_file,'OVERLAY':nso_shp,'OUTPUT':clip_path})

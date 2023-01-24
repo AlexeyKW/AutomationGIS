@@ -1,0 +1,1 @@
+foreach ($f in Get-ChildItem D:\AutoGIS\osm\ -filter *.shp) { .\ogr2ogr.exe -clipsrc D:\AutoGIS\adm\admin_level_4.shp D:\AutoGIS\adm\clip1\$f $f.fullname -clipsrcwhere "ref='RU-NVS'" -t_srs EPSG:28414 -skipfailures -lco ENCODING=UTF-8}
